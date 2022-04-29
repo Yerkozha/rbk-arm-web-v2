@@ -1,5 +1,6 @@
 import { InferActionsTypes } from '../redux-store';
 
+
 let initialState = {
     initialized: false
 };
