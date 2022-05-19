@@ -10,7 +10,7 @@ module.exports = {
             loader: require.resolve("babel-loader"),
             options: {
               plugins: [
-                require.resolve("react-refresh/babel"),
+                require.resolve("react-refresh/babel"),'@babel/plugin-transform-runtime'
               ].filter(Boolean),
             },
           }]

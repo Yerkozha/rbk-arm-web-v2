@@ -1,20 +1,23 @@
 import React from "react";
 import { Redirect, Route } from "react-router-dom";
 import { RouteComponentProps } from '@reach/router';
+import { useSelector } from "react-redux";
+import { selectIsAuth } from "src/redux/reducers/selectors/auth-selector";
+
 interface RouteProps {
     path: string
   }
 const ProtectedRoute: React.FC<any> = ({ component: Component, ...restOfProps }:any) => {
     
   // const isAuthenticated = localStorage.getItem("api_token");
-
+  const isAuth = useSelector(selectIsAuth)
   return (
   <Route
       {...restOfProps}
       render={(props: any) =>
-        // isAuthenticated ? 
+        isAuth ? 
         <Component {...props} /> 
-        // : <Redirect to="/login" />
+        : <Redirect to="/login" />
       }
     />
   );

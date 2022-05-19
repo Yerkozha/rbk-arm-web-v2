@@ -14,7 +14,15 @@
         "strict": true ,
         "skipLibCheck": true ,
         "forceConsistentCasingInFileNames": true ,
-        "resolveJsonModule": true
+        "resolveJsonModule": true,
+        "baseUrl": ".",
+        "paths": {
+            "assets": ["assets"],
+            "src": ["src/"],
+            "ui": ["src/ui"],
+            "ui/*": ["src/ui/*"],
+          }
+        
     },
     "include": [
         "src/**/*"
